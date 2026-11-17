@@ -23,7 +23,9 @@ import {
   GitBranch, 
   Github, 
   Code,
-  Sparkles
+  Sparkles,
+  Network,
+  CheckCircle2
 } from 'lucide-react';
 import { skillCategories } from '../data/portfolioData';
 
@@ -52,6 +54,8 @@ const iconMap = {
   GitBranch: GitBranch,
   Github: Github,
   Code: Code,
+  Network: Network,
+  CheckCircle2: CheckCircle2,
 };
 
 export default function Skills() {

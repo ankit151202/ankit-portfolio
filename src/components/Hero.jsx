@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, FileDown, Mail, Github, Linkedin, Sparkles, CheckCircle2, Code2, Terminal, Shield } from 'lucide-react';
+import { ArrowRight, FileDown, Mail, Github, Linkedin, Sparkles, CheckCircle2, Code2, Terminal, Shield, ShieldCheck } from 'lucide-react';
 import { personalInfo, experienceStats } from '../data/portfolioData';
 
 export default function Hero() {
