@@ -14,8 +14,8 @@ A modern, responsive personal portfolio website engineered with **React.js, Vite
 - **Name**: Ankit Verma
 - **Role**: Software Engineer | React Developer | QA Engineer
 - **Institution**: GLA University, Mathura
-- **Degree**: Bachelor of Technology (B.Tech) in Computational Science
-- **Graduation**: Class of 2026
+- **Degree**: Bachelor of Technology (B.Tech) in Computer Science
+- **Status**: Graduate
 - **CGPA**: 7.03
 - **GitHub**: [github.com/ankit151202](https://github.com/ankit151202)
 - **LinkedIn**: [linkedin.com/in/ankit-verma-a107b7251](https://www.linkedin.com/in/ankit-verma-a107b7251)
@@ -33,9 +33,9 @@ A modern, responsive personal portfolio website engineered with **React.js, Vite
   3. **News Aggregator**: React-based real-time news application.
   4. **Job Application Tracker**: React CRUD application for career pipeline management.
   5. **Blood Share & Care**: Community blood donation & emergency connect platform.
-- **Academic Timeline**: Highlights GLA University B.Tech in Computational Science, 7.03 CGPA, and core coursework.
+- **Academic Timeline**: Highlights GLA University B.Tech in Computer Science, 7.03 CGPA, and core coursework.
 - **Configurable Contact Form**: Supports direct POST submission to Formspree, EmailJS, or custom API via `VITE_CONTACT_FORM_ENDPOINT`, with instant feedback and mailto fallback.
-- **Downloadable Resume**: Built-in resume download button (`/resume.pdf`).
+- **Dual Downloadable Resumes**: Integrated 1-click downloads for both **Software Developer Resume** and **QA & Testing Engineer Resume**.
 - **Responsive Layout**: Mobile hamburger drawer, smooth scroll navigation, and active section tracking.
 
 ---

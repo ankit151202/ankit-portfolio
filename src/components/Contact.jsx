@@ -11,7 +11,9 @@ import {
   Copy, 
   ExternalLink,
   Settings,
-  FileDown
+  FileDown,
+  Code2,
+  ShieldCheck
 } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
@@ -163,15 +165,23 @@ export default function Contact() {
                 </a>
               </div>
 
-              {/* Resume Download CTA */}
-              <div className="pt-2">
+              {/* Resume Download CTAs */}
+              <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 <a
-                  href={personalInfo.resumeUrl}
-                  download="Ankit_Verma_Resume.pdf"
-                  className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-slate-200 bg-slate-900 border border-slate-700/80 hover:border-cyan-500/50 hover:text-white transition-colors"
+                  href={personalInfo.resumes.developer.url}
+                  download="Ankit_Verma_Developer_Resume.pdf"
+                  className="flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-200 bg-slate-900 border border-slate-700/80 hover:border-cyan-500/50 hover:text-white transition-colors"
                 >
-                  <FileDown className="w-4 h-4 text-cyan-400" />
-                  <span>Download Curriculum Vitae</span>
+                  <Code2 className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>Dev Resume</span>
+                </a>
+                <a
+                  href={personalInfo.resumes.qa.url}
+                  download="Ankit_Verma_QA_Resume.pdf"
+                  className="flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-200 bg-slate-900 border border-slate-700/80 hover:border-emerald-500/50 hover:text-white transition-colors"
+                >
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>QA Resume</span>
                 </a>
               </div>
             </div>

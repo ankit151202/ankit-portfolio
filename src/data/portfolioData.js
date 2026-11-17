@@ -2,11 +2,27 @@ export const personalInfo = {
   name: "Ankit Verma",
   title: "Software Engineer | React Developer | QA Engineer",
   tagline: "Building scalable, high-performance web applications and ensuring rock-solid software quality.",
-  bio: "Passionate Software Engineer and final-year Computational Science undergraduate at GLA University. Specializing in modern React.js frontend ecosystems, full-stack web architectures, and comprehensive software quality assurance with both automated and manual testing.",
-  status: "Available for Full-time Roles & Internships",
+  bio: "Passionate Software Engineer and Computer Science graduate from GLA University. Specializing in modern React.js frontend ecosystems, full-stack web architectures, and comprehensive software quality assurance with both automated and manual testing.",
+  status: "Available for Full-time Roles & Opportunities",
   location: "Mathura, India",
   graduationYear: 2026,
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "/Ankit_Verma_Developer_Resume.pdf",
+  resumes: {
+    developer: {
+      name: "Software Developer Resume",
+      url: "/Ankit_Verma_Developer_Resume.pdf",
+      fileName: "Ankit_Verma_Developer_Resume.pdf",
+      label: "Dev Resume",
+      role: "React & Full Stack Development",
+    },
+    qa: {
+      name: "QA & Testing Engineer Resume",
+      url: "/Ankit_Verma_QA_Testing_Resume.pdf",
+      fileName: "Ankit_Verma_QA_Testing_Resume.pdf",
+      label: "QA Resume",
+      role: "Manual & Automation Testing (Selenium, Postman)",
+    }
+  },
   socials: {
     github: "https://github.com/ankit151202",
     linkedin: "https://www.linkedin.com/in/ankit-verma-a107b7251",
@@ -19,13 +35,13 @@ export const educationData = [
   {
     institution: "GLA University, Mathura",
     degree: "Bachelor of Technology (B.Tech)",
-    field: "Computational Science",
+    field: "Computer Science",
     period: "2022 - 2026",
     cgpa: "7.03",
-    status: "Final Year (Graduating 2026)",
+    status: "Graduated",
     highlights: [
       "Rigorous coursework in Data Structures, Algorithms, Database Management Systems, and Object-Oriented Programming.",
-      "Specialized training in Computational Science methodologies, Software Engineering principles, and Software Quality Assurance.",
+      "Specialized training in Computer Science methodologies, Software Engineering principles, and Software Quality Assurance.",
       "Active participant in technical symposiums, hackathons, and software development projects."
     ]
   }
@@ -197,8 +213,8 @@ export const projectsData = [
 ];
 
 export const experienceStats = [
-  { label: "Graduation", value: "2026", subtext: "GLA University, Mathura" },
-  { label: "Academic CGPA", value: "7.03", subtext: "B.Tech Computational Science" },
+  { label: "Education", value: "B.Tech", subtext: "GLA University Graduate" },
+  { label: "Academic CGPA", value: "7.03", subtext: "B.Tech Computer Science" },
   { label: "Key Projects", value: "5+", subtext: "Full Stack, React & Security" },
   { label: "Core Competencies", value: "3", subtext: "Dev, QA & Problem Solving" }
 ];

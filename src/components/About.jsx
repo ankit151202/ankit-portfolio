@@ -39,9 +39,9 @@ export default function About() {
   ];
 
   const highlights = [
-    { label: "Degree", value: "B.Tech in Computational Science" },
+    { label: "Degree", value: "B.Tech in Computer Science" },
     { label: "Institution", value: "GLA University, Mathura" },
-    { label: "Graduation Year", value: "Class of 2026" },
+    { label: "Academic Status", value: "B.Tech Graduate" },
     { label: "Academic CGPA", value: "7.03 / 10.0" },
   ];
 
@@ -75,7 +75,7 @@ export default function About() {
               </h3>
               
               <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
-                I am <span className="text-white font-semibold">Ankit Verma</span>, a pre-final year Computational Science undergraduate at <span className="text-cyan-400 font-medium">GLA University, Mathura</span>. My academic journey has anchored me deeply in core computational thinking, algorithmic efficiency, and scalable software architecture.
+                I am <span className="text-white font-semibold">Ankit Verma</span>, a Computer Science graduate from <span className="text-cyan-400 font-medium">GLA University, Mathura</span>. My academic journey has anchored me deeply in core computer science foundations, algorithmic efficiency, and scalable software architecture.
               </p>
 
               <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
@@ -96,16 +96,26 @@ export default function About() {
                 ))}
               </div>
 
-              {/* Download Resume Link */}
-              <div className="pt-2">
+              {/* Download Resume Links */}
+              <div className="pt-2 flex flex-wrap gap-4">
                 <a
-                  href={personalInfo.resumeUrl}
-                  download="Ankit_Verma_Resume.pdf"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors group"
+                  href={personalInfo.resumes.developer.url}
+                  download="Ankit_Verma_Developer_Resume.pdf"
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors group"
                 >
-                  <FileDown className="w-4 h-4 text-cyan-400" />
-                  <span>Download Full Curriculum Vitae</span>
-                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <Code2 className="w-4 h-4 text-cyan-400" />
+                  <span>Developer Resume</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </a>
+
+                <a
+                  href={personalInfo.resumes.qa.url}
+                  download="Ankit_Verma_QA_Resume.pdf"
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors group"
+                >
+                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                  <span>QA Resume</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </a>
               </div>
             </div>
@@ -149,8 +159,8 @@ export default function About() {
                   <Sparkles className="w-5 h-5" />
                 </div>
                 <div>
-                  <h5 className="text-sm font-semibold text-white">Graduating in 2026</h5>
-                  <p className="text-xs text-slate-400">Open to internships &amp; full-time software engineering roles</p>
+                  <h5 className="text-sm font-semibold text-white">Computer Science Graduate</h5>
+                  <p className="text-xs text-slate-400">Open to full-time software engineering &amp; QA opportunities</p>
                 </div>
               </div>
               <a

@@ -26,7 +26,7 @@ export default function Footer() {
             <p className="text-xs text-slate-400 max-w-sm">
               Software Engineer • React Developer • QA Engineer
               <br />
-              GLA University, Mathura • B.Tech Computational Science (2026)
+              GLA University, Mathura • B.Tech Computer Science Graduate
             </p>
           </div>
 
@@ -38,12 +38,20 @@ export default function Footer() {
             <a href="#education" className="hover:text-cyan-400 transition-colors">Education</a>
             <a href="#contact" className="hover:text-cyan-400 transition-colors">Contact</a>
             <a
-              href={personalInfo.resumeUrl}
-              download="Ankit_Verma_Resume.pdf"
+              href={personalInfo.resumes.developer.url}
+              download="Ankit_Verma_Developer_Resume.pdf"
               className="text-cyan-400 hover:underline flex items-center gap-1"
             >
               <FileDown className="w-3 h-3" />
-              <span>Resume</span>
+              <span>Dev Resume</span>
+            </a>
+            <a
+              href={personalInfo.resumes.qa.url}
+              download="Ankit_Verma_QA_Resume.pdf"
+              className="text-emerald-400 hover:underline flex items-center gap-1"
+            >
+              <FileDown className="w-3 h-3" />
+              <span>QA Resume</span>
             </a>
           </div>
 

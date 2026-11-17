@@ -7,7 +7,7 @@ export default function Hero() {
     "Software Engineer",
     "React Developer",
     "QA Engineer",
-    "Computational Science Undergrad"
+    "Computer Science Graduate"
   ];
 
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
@@ -50,7 +50,7 @@ export default function Hero() {
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping inline-block" />
               <span>Available for Opportunities</span>
               <span className="text-slate-500">•</span>
-              <span className="text-slate-300">GLA University &apos;26</span>
+              <span className="text-slate-300">GLA University Graduate</span>
             </div>
 
             {/* Main Headline */}
@@ -70,7 +70,7 @@ export default function Hero() {
 
             {/* Description Paragraph */}
             <p className="text-base sm:text-lg text-slate-300/90 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-              Final-year <span className="text-white font-medium">B.Tech in Computational Science</span> student at <span className="text-cyan-400 font-medium">GLA University, Mathura</span> (CGPA: 7.03).
+              <span className="text-white font-medium">B.Tech in Computer Science</span> graduate from <span className="text-cyan-400 font-medium">GLA University, Mathura</span> (CGPA: 7.03).
               Specialized in engineering performant <span className="text-white font-medium">React.js web applications</span>, designing robust full-stack services, and delivering high quality through rigorous <span className="text-emerald-400 font-medium">QA & test automation</span>.
             </p>
 
@@ -85,12 +85,23 @@ export default function Hero() {
               </a>
 
               <a
-                href={personalInfo.resumeUrl}
-                download="Ankit_Verma_Resume.pdf"
-                className="flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-slate-200 bg-slate-900/80 hover:bg-slate-800/90 border border-slate-700/80 hover:border-cyan-500/50 hover:text-white transition-all duration-200 hover:-translate-y-0.5"
+                href={personalInfo.resumes.developer.url}
+                download="Ankit_Verma_Developer_Resume.pdf"
+                className="flex items-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-slate-200 bg-slate-900/80 hover:bg-slate-800/90 border border-slate-700/80 hover:border-cyan-500/50 hover:text-white transition-all duration-200 hover:-translate-y-0.5"
+                title="Download Software Developer Resume"
               >
-                <FileDown className="w-4 h-4 text-cyan-400" />
-                <span>Download Resume</span>
+                <Code2 className="w-4 h-4 text-cyan-400" />
+                <span>Dev Resume</span>
+              </a>
+
+              <a
+                href={personalInfo.resumes.qa.url}
+                download="Ankit_Verma_QA_Resume.pdf"
+                className="flex items-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-slate-200 bg-slate-900/80 hover:bg-slate-800/90 border border-slate-700/80 hover:border-emerald-500/50 hover:text-white transition-all duration-200 hover:-translate-y-0.5"
+                title="Download QA & Testing Engineer Resume"
+              >
+                <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                <span>QA Resume</span>
               </a>
 
               <a
@@ -195,9 +206,9 @@ export default function Hero() {
                     <span className="text-purple-400">const</span>{' '}
                     <span className="text-yellow-300">softwareEngineer</span> = &#123;
                     {'\n'}  name: <span className="text-emerald-300">&quot;Ankit Verma&quot;</span>,
-                    {'\n'}  degree: <span className="text-emerald-300">&quot;B.Tech Computational Science&quot;</span>,
+                    {'\n'}  degree: <span className="text-emerald-300">&quot;B.Tech Computer Science&quot;</span>,
                     {'\n'}  university: <span className="text-emerald-300">&quot;GLA University, Mathura&quot;</span>,
-                    {'\n'}  graduation: <span className="text-cyan-300">2026</span>,
+                    {'\n'}  status: <span className="text-emerald-300">&quot;Graduated • Ready to build &amp; ship&quot;</span>,
                     {'\n'}  cgpa: <span className="text-cyan-300">7.03</span>,
                     {'\n'}  roles: [
                     {'\n'}    <span className="text-emerald-300">&quot;Software Engineer&quot;</span>,

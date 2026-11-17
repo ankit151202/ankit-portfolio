@@ -28,7 +28,7 @@ export default function Education() {
             Education &amp; <span className="text-gradient">Academics</span>
           </h2>
           <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
-            Rigorous computational science foundation empowering practical software engineering and testing.
+            Rigorous computer science foundation empowering practical software engineering and testing.
           </p>
         </div>
 
@@ -67,7 +67,7 @@ export default function Education() {
                   </div>
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 text-xs font-mono text-slate-300">
                     <Calendar className="w-3.5 h-3.5 text-indigo-400" />
-                    <span>{edu.period} (Graduating {edu.status ? '2026' : '2026'})</span>
+                    <span>{edu.period} ({edu.status})</span>
                   </div>
                 </div>
               </div>

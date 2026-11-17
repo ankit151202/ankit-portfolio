@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, FileDown, Github, Linkedin, Terminal } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Menu, X, FileDown, Github, Linkedin, ChevronDown, Code2, ShieldCheck } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const [resumeDropdown, setResumeDropdown] = useState(false);
+  const dropdownRef = useRef(null);
 
   const navLinks = [
     { name: 'About', href: '#about' },
@@ -35,8 +37,18 @@ export default function Navbar() {
       }
     };
 
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setResumeDropdown(false);
+      }
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, []);
 
   const closeMenu = () => setIsOpen(false);
@@ -45,7 +57,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#070b14]/85 backdrop-blur-md border-b border-slate-800/80 shadow-lg shadow-black/20 py-3'
+          ? 'bg-[#070b14]/90 backdrop-blur-md border-b border-slate-800/80 shadow-lg shadow-black/20 py-3'
           : 'bg-transparent py-5'
       }`}
     >
@@ -90,7 +102,7 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Action CTAs: Socials & Resume */}
+          {/* Action CTAs: Socials & Resume Dropdown */}
           <div className="hidden md:flex items-center gap-3">
             <a
               href={personalInfo.socials.github}
@@ -111,27 +123,67 @@ export default function Navbar() {
               <Linkedin className="w-5 h-5" />
             </a>
 
-            <a
-              href={personalInfo.resumeUrl}
-              download="Ankit_Verma_Resume.pdf"
-              className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-md shadow-cyan-500/20 hover:shadow-cyan-500/30 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
-            >
-              <FileDown className="w-4 h-4" />
-              <span>Resume</span>
-            </a>
+            {/* Resume Dropdown Button */}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setResumeDropdown(!resumeDropdown)}
+                className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-md shadow-cyan-500/20 hover:shadow-cyan-500/30 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+              >
+                <FileDown className="w-4 h-4" />
+                <span>Resume</span>
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${resumeDropdown ? 'rotate-180' : ''}`} />
+              </button>
+
+              {/* Dropdown Menu */}
+              {resumeDropdown && (
+                <div className="absolute right-0 mt-2 w-64 rounded-xl bg-slate-900 border border-slate-700/80 shadow-2xl py-2 z-50 animate-in fade-in zoom-in-95 duration-150">
+                  <div className="px-3 py-1.5 text-[11px] font-mono text-slate-400 uppercase tracking-wider border-b border-slate-800">
+                    Select Resume Type
+                  </div>
+                  <a
+                    href={personalInfo.resumes.developer.url}
+                    download="Ankit_Verma_Developer_Resume.pdf"
+                    onClick={() => setResumeDropdown(false)}
+                    className="flex items-start gap-2.5 px-3 py-2.5 hover:bg-slate-800/80 text-left transition-colors group"
+                  >
+                    <div className="p-1.5 rounded-lg bg-cyan-500/10 text-cyan-400 group-hover:bg-cyan-500/20 mt-0.5">
+                      <Code2 className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-semibold text-white group-hover:text-cyan-400">
+                        Developer Resume
+                      </div>
+                      <div className="text-[11px] text-slate-400">
+                        React, Full Stack &amp; Software Dev
+                      </div>
+                    </div>
+                  </a>
+
+                  <a
+                    href={personalInfo.resumes.qa.url}
+                    download="Ankit_Verma_QA_Resume.pdf"
+                    onClick={() => setResumeDropdown(false)}
+                    className="flex items-start gap-2.5 px-3 py-2.5 hover:bg-slate-800/80 text-left transition-colors group border-t border-slate-800/60"
+                  >
+                    <div className="p-1.5 rounded-lg bg-emerald-500/10 text-emerald-400 group-hover:bg-emerald-500/20 mt-0.5">
+                      <ShieldCheck className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-semibold text-white group-hover:text-emerald-400">
+                        QA &amp; Testing Resume
+                      </div>
+                      <div className="text-[11px] text-slate-400">
+                        Manual, Selenium &amp; Automation
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
-            <a
-              href={personalInfo.resumeUrl}
-              download="Ankit_Verma_Resume.pdf"
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-cyan-500/10 text-cyan-400 border border-cyan-500/30"
-            >
-              <FileDown className="w-3.5 h-3.5" />
-              <span>Resume</span>
-            </a>
-
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/80 focus:outline-none focus:ring-2 focus:ring-cyan-500"
@@ -166,6 +218,31 @@ export default function Navbar() {
             })}
           </nav>
 
+          {/* Mobile Resume Choices */}
+          <div className="pt-3 border-t border-slate-800/80 space-y-2">
+            <span className="text-xs font-mono text-slate-400 px-1 block">Download Resumes:</span>
+            <div className="grid grid-cols-2 gap-2">
+              <a
+                href={personalInfo.resumes.developer.url}
+                download="Ankit_Verma_Developer_Resume.pdf"
+                onClick={closeMenu}
+                className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium bg-cyan-500/10 text-cyan-400 border border-cyan-500/30"
+              >
+                <Code2 className="w-3.5 h-3.5" />
+                <span>Dev Resume</span>
+              </a>
+              <a
+                href={personalInfo.resumes.qa.url}
+                download="Ankit_Verma_QA_Resume.pdf"
+                onClick={closeMenu}
+                className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/30"
+              >
+                <ShieldCheck className="w-3.5 h-3.5" />
+                <span>QA Resume</span>
+              </a>
+            </div>
+          </div>
+
           <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <a
@@ -187,16 +264,6 @@ export default function Navbar() {
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
-
-            <a
-              href={personalInfo.resumeUrl}
-              download="Ankit_Verma_Resume.pdf"
-              onClick={closeMenu}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-cyan-500 to-blue-600 text-white"
-            >
-              <FileDown className="w-4 h-4" />
-              <span>Download PDF</span>
-            </a>
           </div>
         </div>
       )}
