@@ -13,7 +13,8 @@ import {
   Settings,
   FileDown,
   Code2,
-  ShieldCheck
+  ShieldCheck,
+  Phone
 } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
@@ -77,7 +78,7 @@ export default function Contact() {
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     );
-    window.location.href = `mailto:?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:ankitverma7860786@gmail.com?subject=${subject}&body=${body}`;
   };
 
   const copyDraft = () => {
@@ -122,8 +123,44 @@ export default function Contact() {
                 I am actively seeking software engineering roles, React development projects, and QA automation opportunities. Connect with me directly on LinkedIn or explore my code on GitHub.
               </p>
 
-              {/* Social Channels */}
+              {/* Contact Channels */}
               <div className="space-y-3 pt-2">
+                <a
+                  href="mailto:ankitverma7860786@gmail.com"
+                  className="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/50 hover:bg-slate-800/60 transition-all duration-200 group"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-400 group-hover:scale-110 transition-transform">
+                      <Mail className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors">
+                        ankitverma7860786@gmail.com
+                      </div>
+                      <div className="text-xs text-slate-400">Direct Email Response</div>
+                    </div>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-slate-500 group-hover:text-cyan-400 group-hover:translate-x-0.5 transition-all" />
+                </a>
+
+                <a
+                  href="tel:+918948303272"
+                  className="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/50 hover:bg-slate-800/60 transition-all duration-200 group"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 group-hover:scale-110 transition-transform">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                        +91 8948303272
+                      </div>
+                      <div className="text-xs text-slate-400">Phone &amp; WhatsApp</div>
+                    </div>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-slate-500 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition-all" />
+                </a>
+
                 <a
                   href={personalInfo.socials.linkedin}
                   target="_blank"

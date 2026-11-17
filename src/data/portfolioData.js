@@ -5,6 +5,8 @@ export const personalInfo = {
   bio: "Passionate Software Engineer and Computer Science graduate from GLA University. Specializing in modern React.js frontend ecosystems, full-stack web architectures, and comprehensive software quality assurance with both automated and manual testing.",
   status: "Available for Full-time Roles & Opportunities",
   location: "Mathura, India",
+  email: "ankitverma7860786@gmail.com",
+  phone: "+91 8948303272",
   graduationYear: 2026,
   resumeUrl: "/Ankit_Verma_Developer_Resume.pdf",
   resumes: {
@@ -217,4 +219,37 @@ export const experienceStats = [
   { label: "Academic CGPA", value: "7.03", subtext: "B.Tech Computer Science" },
   { label: "Key Projects", value: "5+", subtext: "Full Stack, React & Security" },
   { label: "Core Competencies", value: "3", subtext: "Dev, QA & Problem Solving" }
+];
+
+export const experienceData = [
+  {
+    role: "Frontend Developer & QA Intern",
+    company: "Coding Block",
+    location: "Remote",
+    period: "June 2024 – August 2024",
+    highlights: [
+      "Built and deployed responsive web applications using React.js, leveraging component-based architecture for clean code reusability.",
+      "Developed dynamic UI components with React Hooks (useState, useEffect), enabling seamless real-time interactions.",
+      "Optimized frontend performance by implementing lazy loading, code splitting, and memoization techniques.",
+      "Designed and executed manual & automated test cases with Selenium WebDriver (Java) and validated REST APIs with Postman."
+    ]
+  }
+];
+
+export const certificationsData = [
+  {
+    title: "SQL (Advanced) — 5-Star Rating",
+    issuer: "HackerRank",
+    description: "Demonstrated advanced proficiency in complex relational database queries, joins, aggregations, window functions, and query optimization."
+  },
+  {
+    title: "Java Problem Solving — 4-Star Rating",
+    issuer: "HackerRank",
+    description: "Ranked in the top tier of Java problem-solvers on HackerRank for data structures and algorithmic challenges."
+  },
+  {
+    title: "Introduction to Automation Testing",
+    issuer: "Great Learning",
+    description: "Comprehensive training in test automation frameworks, scripting, QA methodologies, and efficient test case development."
+  }
 ];
